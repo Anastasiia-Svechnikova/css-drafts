@@ -1,0 +1,672 @@
+:root {
+    --yellow: #fcd13d;
+}
+
+html *, *:before, *:after {
+    box-sizing: border-box;
+}
+.container {
+    width: 1000px;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) ;
+    grid-auto-rows: 100px ;
+}
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    width: 120px;
+    height: 40px;
+    letter-spacing: .1em;
+    cursor: pointer;
+}
+
+#first {
+    border: 1px solid black;
+    overflow: hidden;
+}
+#first:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--yellow);
+    transform-origin: 0 100%;
+    transition: transform 200ms ease-in-out;
+    transform: rotate(-90deg);
+    z-index: -1;
+}
+#first:hover:before {
+    transform: rotate(0deg);
+}
+
+#second {
+    border: 1px solid black;
+    color: #000000;
+    transition: color 400ms ease-in-out;
+}
+
+#second:hover {
+    color: #ffffff;
+}
+
+#second:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    transform: rotateX(90deg);
+    transition: transform 400ms ease-in-out;
+    z-index: -1;
+}
+
+#second:hover:before {
+    transform: rotateX(0deg);
+}
+
+#third {
+    border: 1px solid black;
+    color: #000000;
+    overflow: hidden;
+}
+
+#third:before {
+    position: absolute;
+    content: "Click!";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--yellow);
+    transform: translateY(-100%);
+    transition: transform 200ms ease-in-out;
+}
+
+#third:hover:before {
+    transform: translateY(0);
+}
+
+#fourth {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: #000000;
+    overflow: hidden;
+    transition: all 400ms ease-in-out;
+}
+#fourth:hover {
+    background-color: var(--yellow);
+}
+
+#fourth:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 10px;
+    background-color: #ffffff;
+    transform: translateX(-120%) rotate(45deg);
+    transition: transform 500ms ease-in-out;
+}
+#fourth:hover:before {
+    position: absolute;
+    transform: translateX(100%) rotate(45deg);
+}
+
+#fifth {
+    border: 1px solid #000000;
+    overflow: hidden;
+}
+
+#fifth:before {
+    position: absolute;
+    content: 'Fifth';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    color: #ffffff;
+    transform: scale(5);
+    opacity: 0;
+    transition: transform 300ms ease-in-out;
+}
+
+#fifth:hover:before {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#sixth {
+    border: 1px solid tomato;
+    overflow: hidden;
+    color: tomato;
+}
+
+#sixth:hover {
+    color: #ffffff;
+}
+
+#sixth:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: tomato;
+    border-radius: 0 0 50% 50%;
+    height: 0;
+    transition: all 300ms ease-in-out;
+    z-index: -1;
+}
+
+#sixth:hover:before {
+    height: 200%;
+}
+
+
+#seven {
+    border: 1px solid black;
+    color: #000000;
+    overflow: hidden;
+    transition: border 10ms ease-in-out 300ms;
+}
+
+#seven:hover {
+    border: none;
+}
+
+#seven:before {
+    content: 'Seven';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateX(120deg);
+    transform-origin: top;
+    transition: all 400ms ease-in-out;
+}
+
+#seven:hover:before {
+    transform: rotateX(0deg);
+}
+
+#seven:after {
+    content: 'Seven';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--yellow);
+    border: 1px solid var(--yellow);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateX(120deg);
+    transform-origin: top;
+    transition: all 400ms ease-in-out 150ms;
+}
+
+#seven:hover:after {
+    transform: rotateX(0deg);
+}
+
+
+#eight {
+    border: 1px solid var(--yellow);
+    color: transparent;
+}
+
+#eight:before  {
+    content: 'Eight';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--yellow);
+    background-color: #000000;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+#eight:hover:before {
+    transform: translate(100%) scale(0) rotateY(90deg);
+}
+
+#eight:after  {
+    content: 'Eight';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--yellow);
+    background-color: #000000;
+    opacity: 1;
+    transform: translate(-100%) rotateY(-90deg);
+    transition: all 0.2s ease-in-out;
+}
+
+#eight:hover:after {
+    transform: translate(0) scale(1) rotateY(0);
+}
+
+#nine {
+    color: #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+
+#nine:hover {
+    color: #000000;
+}
+
+#nine:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: #f827af;
+    top: -3px;
+    left: -3px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+    transform-origin: top;
+
+}
+
+#nine:hover:before {
+    top: -5px;
+    left: 0;
+    transform:  perspective(1000px) rotateX(75deg);
+}
+
+#nine:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: #fcd13d;
+    top: 3px;
+    left: 3px;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    transition: all .3s ease-in-out;
+    transform-origin: bottom;
+
+}
+
+#nine:hover:after {
+    top: 5px;
+    left: 0;
+    transform: perspective(1000px) rotateX(-75deg) ;
+}
+
+#ten {
+    color: #000000;
+    transition: all 0.2s ease-in-out;
+}
+
+#ten:before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: calc(100% + 14px);
+    top: 0;
+    left: -7px;
+    border-bottom: 1px solid #fcd13d;
+    border-top: 1px solid #000000;
+    transition: all 0.3s ease-in-out;
+}
+
+#ten:after {
+    position: absolute;
+    content: '';
+    height: calc(100% + 14px);
+    width: 100%;
+    top: -7px;
+    left: 0;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #fcd13d;
+    transition: all 0.3s ease-in-out;
+}
+
+#ten:hover:before {
+    transform: rotateX(180deg);
+}
+
+#ten:hover:after {
+    transform: rotateY(180deg);
+}
+
+#eleven {
+    overflow: visible;
+    color: #000000;
+    background-color: #fcd13d;
+
+    transition: all 400ms ease-in-out;
+}
+
+#eleven:before {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-left: 1.5px solid #000000;
+    border-top: 1.5px solid #000000;
+    transition: all 300ms ease-in-out;
+
+}
+
+#eleven:after {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-right: 1.5px solid #000000;
+    border-bottom: 1.5px solid #000000;
+    transition: all 300ms ease-in-out;
+}
+
+#eleven:hover:before,
+#eleven:hover:after {
+    width: 100%;
+    height: 100%;
+}
+
+#twelve {
+    border: 1px solid black;
+    color: #000000;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+#twelve:hover {
+    color: #ffffff;
+}
+
+#twelve:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    content: '';
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    transition: all .3s ease-in-out;
+}
+
+#twelve:hover:before {
+    transform: rotate(10deg);
+    opacity: 1;
+}
+
+#twelve span {
+    transform: translateX(7px);
+    display: inline-block;
+    transition: all .3s ease-in-out;
+}
+
+#twelve:hover span {
+    transform: translateX(3px) rotate(360deg) scale(1.5);
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#thirteen {
+    color: #000000;
+    overflow: hidden;
+}
+
+#thirteen:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 0;
+    background-color: #000000;
+    transform: translateX(-100%);
+    transition: all .3s ease-in-out;
+}
+
+#thirteen:hover:before {
+    transform: translateX(0);
+}
+
+#thirteen:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #000000;
+    transform: translateX(100%);
+    transition: all .3s ease-in-out;
+}
+
+#thirteen:hover:after {
+    transform: translateX(0);
+}
+
+#thirteen span:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: #000000;
+    transform: translateY(100%);
+    transition: all .3s ease-in-out;
+}
+
+#thirteen:hover span:after {
+    transform: translateY(0);
+}
+
+#thirteen span:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    transform: translateY(-100%);
+    transition: all .3s ease-in-out;
+}
+
+#thirteen:hover span:before {
+    transform: translateY(0);
+}
+
+#fourteen {
+    color: #00aeff;
+    border: 2px solid #00aeff;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+#fourteen:hover {
+    color: white;
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: calc(100% + 22px);
+    background-color: #00aeff;
+    transition: all 1s;
+    z-index: -1;
+}
+
+#fourteen:hover .wave {
+    top: 0;
+}
+
+.wave:before {
+    content: "";
+    position: absolute;
+    top: -22px;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    background: url("../images/wave.png");
+    animation: wavy 0.5s linear infinite;
+}
+
+@keyframes wavy {
+    0% { background-position-x: 0 }
+    100% { background-position-x: 118px; }
+}
+
+
+#fifteen:before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: -2%;
+    top: -3px;
+    background-color: #f827af;
+    transition: all .3s ease-in-out;
+    z-index: -1;
+    transform: skewX(45deg);
+}
+
+#fifteen:hover:before {
+    transform: skewX(0deg);
+    left: 50%;
+    top: 0;
+}
+
+#fifteen:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 54%;
+    top: 3px;
+    background-color: #fcd13d;
+    transition: all .3s ease-in-out;
+    z-index: -1;
+    transform: skewX(45deg);
+}
+
+#fifteen:hover:after {
+    transform: skewX(0deg);
+    left: 0;
+    top: 0;
+}
+
+#sixteen {
+    background-color: #fcd13d;
+    color: #000000;
+    border-radius: 30px;
+}
+
+#sixteen:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fcd13d;
+    opacity: .8;
+    transition: all .3s ease-in-out;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+#sixteen:hover:before {
+    transform: scale(1.4);
+    opacity: 0;
+}
+
+
+#seventeen {
+    border: 1px solid black;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+#seventeen:hover {
+   color: #ffffff;
+}
+#seventeen:before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    z-index: -1;
+    border-top: 20px solid #000000;
+    border-bottom: 20px solid #000000;
+    border-right: 20px solid transparent;
+    transform: translateX(-100%);
+    transition: all .3s ease-in-out;
+}
+
+#seventeen:hover:before {
+    transform: translateX(0);
+}
+
+#seventeen:after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    z-index: -1;
+    border-top: 20px solid #000000;
+    border-bottom: 20px solid #000000;
+    border-left: 20px solid transparent;
+    transform: translateX(100%);
+    transition: all .3s ease-in-out;
+}
+
+#seventeen:hover:after {
+    transform: translateX(0);
+}
